@@ -24,9 +24,70 @@
 //     }
 //     return (0);
 // }
-int	main(int argc, char **argv)
+#include <stdio.h>
+#include <stdlib.h>
+#include "push_swap.h"
+
+t_stack	*new_node(int value)
 {
-	(void)argc;
-	(void)argv;
+	t_stack	*node;
+
+	node = malloc(sizeof(t_stack));
+	node->value = value;
+	node->next = NULL;
+	return (node);
+}
+
+void	add_back(t_stack **stack, int value)
+{
+	t_stack	*new;
+	t_stack	*tmp;
+
+	new = new_node(value);
+	if (!*stack)
+	{
+		*stack = new;
+		return ;
+	}
+	tmp = *stack;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
+}
+
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("%d ", stack->value);
+		stack = stack->next;
+	}
+	printf("\n");
+}
+
+int	main(int ac, char **av)
+{
+	t_stack	*a;
+	int		i;
+
+	a = NULL;
+	if (ac != 4)
+	{
+		printf("Usage: ./push_swap n1 n2 n3\n");
+		return (0);
+	}
+	i = 1;
+	while (i < ac)
+	{
+		add_back(&a, atoi(av[i]));
+		i++;
+	}
+	printf("Before: ");
+	print_stack(a);
+
+	sort_three(&a);
+
+	printf("After:  ");
+	print_stack(a);
 	return (0);
 }

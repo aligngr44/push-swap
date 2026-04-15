@@ -10,14 +10,21 @@ void	sort_three(t_stack **a)
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
 
-	if (first > second && first > third)
-		ra(a);
-	else if (second > first && second > third)
-		rra(a);
-
-	first = (*a)->value;
-	second = (*a)->next->value;
-
-	if (first > second)
+	if (first > second && second < third && first < third) // 2 1 3
 		sa(a);
+	else if (first > second && second > third) // 3 2 1
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (first > second && second < third && first > third) // 3 1 2
+		ra(a);
+	else if (first < second && second > third && first < third) // 1 3 2
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (first < second && second > third && first > third) // 2 3 1
+		sa(a);
+        ra(a);
 }

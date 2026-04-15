@@ -42,6 +42,7 @@ void	rrr(t_stack **a, t_stack **b);
 ** HELPERS
 */
 int		is_sorted(t_stack *stack);
+void	sort_three(t_stack **a);
 
 /*
 **PARSING

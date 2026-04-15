@@ -16,7 +16,8 @@ SRC			= main.c \
 			  moves/stack_common.c \
 			  utils/ft_error.c \
 			  utils/ft_split.c \
-			  stack_helper/is_sorted.c
+			  stack_helper/is_sorted.c\
+			  algorithms/sort-three.c
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
