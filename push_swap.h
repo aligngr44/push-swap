@@ -42,11 +42,17 @@ void	rrr(t_stack **a, t_stack **b);
 ** HELPERS
 */
 int		is_sorted(t_stack *stack);
-void	sort_three(t_stack **a);
-
+int	stack_max(t_stack *stack);
+int	stack_min(t_stack *stack);
+int	find_position(t_stack *stack, int value);
 /*
-**PARSING
+
+
+**algorithms
 */
+void	min_push_to_b(t_stack **a, t_stack **b);
+void sort_two(t_stack **a);
+void	sort_three(t_stack **a);
 
 
 /*

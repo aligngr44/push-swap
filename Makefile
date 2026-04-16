@@ -17,7 +17,11 @@ SRC			= main.c \
 			  utils/ft_error.c \
 			  utils/ft_split.c \
 			  stack_helper/is_sorted.c\
-			  algorithms/sort-three.c
+			  stack_helper/find_position.c\
+			  stack_helper/stack_max.c\
+			  stack_helper/stack_min.c\
+			  algorithms/simple-algo.c \
+			  algorithms/min_push_to_b.c\
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)

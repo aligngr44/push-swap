@@ -28,33 +28,6 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-t_stack	*new_node(int value)
-{
-	t_stack	*node;
-
-	node = malloc(sizeof(t_stack));
-	node->value = value;
-	node->next = NULL;
-	return (node);
-}
-
-void	add_back(t_stack **stack, int value)
-{
-	t_stack	*new;
-	t_stack	*tmp;
-
-	new = new_node(value);
-	if (!*stack)
-	{
-		*stack = new;
-		return ;
-	}
-	tmp = *stack;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-}
-
 void	print_stack(t_stack *stack)
 {
 	while (stack)
@@ -79,7 +52,7 @@ int	main(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		add_back(&a, atoi(av[i]));
+		stack_add_back(&a, stack_new(atoi(av[i])));
 		i++;
 	}
 	printf("Before: ");
