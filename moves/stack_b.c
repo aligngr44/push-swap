@@ -16,6 +16,8 @@ void	sb(t_stack **b)
 	two->prev = NULL; // yeni head
 	one->prev = two;
 	*b = two; // stack başını güncelle
+
+	write(1, "sb\n", 3);
 }
 
 void	rb(t_stack **b)
@@ -32,6 +34,8 @@ void	rb(t_stack **b)
 	lst = stack_last(*b); // son elemanı bul
 	lst->next = one;      // eski head'i sona koy
 	one->prev = lst;
+
+	write(1, "rb\n", 3);
 }
 
 void	rrb(t_stack **b)
@@ -48,4 +52,7 @@ void	rrb(t_stack **b)
 	(*b)->prev = last;
 	last->prev = NULL; // last yeni head olacak
 	*b = last;
+
+
+	write(1, "rrb\n", 4);
 }

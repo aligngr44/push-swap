@@ -15,6 +15,8 @@ void	pa(t_stack **a, t_stack **b)
 		(*a)->prev = tmp;
 	tmp->prev = NULL;
 	*a = tmp;
+
+	write(1, "pa\n", 3);
 }
 void	pb(t_stack **a, t_stack **b)
 {
@@ -31,4 +33,8 @@ void	pb(t_stack **a, t_stack **b)
 		(*b)->prev = tmp;
 	tmp->prev = NULL;
 	*b = tmp;
+
+
+	write(1, "pb\n", 3);
+
 }

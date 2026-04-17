@@ -17,6 +17,9 @@ void	sa(t_stack **a)
 	two->prev = NULL; // yeni head olacak
 	one->prev = two;
 	*a = two; // stack başını güncelle
+
+
+	write(1, "sa\n", 3);
 }
 
 void	ra(t_stack **a)
@@ -33,6 +36,10 @@ void	ra(t_stack **a)
 	lst = stack_last(*a); // listenin sonunu bul
 	lst->next = one;      // eski head'i sona koy
 	one->prev = lst;
+
+
+
+	write(1, "ra\n", 3);
 }
 
 void	rra(t_stack **a)
@@ -49,4 +56,7 @@ void	rra(t_stack **a)
 	(*a)->prev = last;
 	last->prev = NULL; // last yeni head olacak
 	*a = last;
+
+
+	write(1, "rra\n", 4);
 }
