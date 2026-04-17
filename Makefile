@@ -16,12 +16,20 @@ SRC			= main.c \
 			  moves/stack_common.c \
 			  utils/ft_error.c \
 			  utils/ft_split.c \
+			  utils/free_split.c \
 			  stack_helper/is_sorted.c\
 			  stack_helper/find_position.c\
 			  stack_helper/stack_max.c\
 			  stack_helper/stack_min.c\
 			  algorithms/simple-algo.c \
 			  algorithms/min_push_to_b.c\
+			  parsing/ft_atol.c \
+			  parsing/is_number_string.c \
+              parsing/the_same.c \
+			  parsing/add_number_to_stack.c\
+			  parsing/parse_arg.c\
+			  parsing/parse_input.c
+
 
 
 OBJ_DIR		= obj

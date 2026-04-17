@@ -24,45 +24,41 @@
 //     }
 //     return (0);
 // }
-#include <stdio.h>
-#include <stdlib.h>
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
+static void	sort_small(t_stack **a, t_stack **b)
 {
-	while (stack)
-	{
-		printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	printf("\n");
+	int	size;
+
+	size = stack_size(*a);
+	if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a);
+	else if (size == 4)
+		sort_four(a, b);
+	else if (size == 5)
+		sort_five(a, b);
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		i;
 
-	b = NULL;
 	a = NULL;
-	if (ac != 6)
-	{
-		printf("Usage: ./push_swap n1 n2 n3\n");
+	b = NULL;
+	if (ac < 2)
 		return (0);
-	}
-	i = 1;
-	while (i < ac)
+	if (!parse_input(&a, ac, av))
 	{
-		stack_add_back(&a, stack_new(atoi(av[i])));
-		i++;
+		stack_clear(&a);
+		ft_error();
+		return (1);
 	}
-	printf("Before: ");
-	print_stack(a);
-
-	sort_five(&a, &b);
-
-	printf("After:  ");
-	print_stack(a);
+	if (!is_sorted(a))
+		sort_small(&a, &b);
+	stack_clear(&a);
+	stack_clear(&b);
 	return (0);
 }

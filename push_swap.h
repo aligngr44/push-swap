@@ -61,6 +61,17 @@ void sort_five(t_stack **a, t_stack **b);
 **UTILS
 */
 char	**ft_split(char const *s, char c);
+void	free_split(char **split);
 void	ft_error(void);
+
+/*
+**PARSİNG
+*/
+int		is_number_string(char *s);
+long	ft_atol(const char *str);
+int		the_same(t_stack *a, int value);
+int		add_number_to_stack(t_stack **a, char *token);
+int		parse_arg(t_stack **a, char *arg);
+int		parse_input(t_stack **a, int ac, char **av);
 
 #endif
