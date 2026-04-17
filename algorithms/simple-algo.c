@@ -38,3 +38,11 @@ void sort_four(t_stack **a, t_stack **b)
     sort_three(a);
     pa(a,b);
 }
+
+void sort_five(t_stack **a, t_stack **b)
+{
+	min_push_to_b(a, b);
+	sort_four(a,b);
+	pa(a,b);
+
+}

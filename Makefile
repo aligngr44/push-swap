@@ -23,6 +23,7 @@ SRC			= main.c \
 			  algorithms/simple-algo.c \
 			  algorithms/min_push_to_b.c\
 
+
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
 

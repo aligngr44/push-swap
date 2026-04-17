@@ -41,10 +41,12 @@ void	print_stack(t_stack *stack)
 int	main(int ac, char **av)
 {
 	t_stack	*a;
+	t_stack	*b;
 	int		i;
 
+	b = NULL;
 	a = NULL;
-	if (ac != 4)
+	if (ac != 6)
 	{
 		printf("Usage: ./push_swap n1 n2 n3\n");
 		return (0);
@@ -58,7 +60,7 @@ int	main(int ac, char **av)
 	printf("Before: ");
 	print_stack(a);
 
-	sort_three(&a);
+	sort_five(&a, &b);
 
 	printf("After:  ");
 	print_stack(a);

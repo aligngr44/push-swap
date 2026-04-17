@@ -53,6 +53,8 @@ int	find_position(t_stack *stack, int value);
 void	min_push_to_b(t_stack **a, t_stack **b);
 void sort_two(t_stack **a);
 void	sort_three(t_stack **a);
+void sort_four(t_stack **a, t_stack **b);
+void sort_five(t_stack **a, t_stack **b);
 
 
 /*
