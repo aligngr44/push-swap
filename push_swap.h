@@ -56,6 +56,20 @@ void	sort_three(t_stack **a);
 void sort_four(t_stack **a, t_stack **b);
 void sort_five(t_stack **a, t_stack **b);
 
+void	indexing(t_stack *stack);
+t_stack	*find_unindexed_min(t_stack *stack);
+
+int		chunk_size(int size);
+int		has_chunk_value(t_stack *a, int start, int end);
+void	push_chunks_to_b(t_stack **a, t_stack **b);
+
+int		stack_max_index(t_stack *stack);
+int		find_position_by_index(t_stack *stack, int index);
+void	rotate_b_to_top(t_stack **b, int target_index);
+void	push_back_to_a(t_stack **a, t_stack **b);
+
+void	chunk_sort(t_stack **a, t_stack **b);
+
 
 /*
 **UTILS

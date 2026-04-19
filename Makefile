@@ -23,6 +23,9 @@ SRC			= main.c \
 			  stack_helper/stack_min.c\
 			  algorithms/simple-algo.c \
 			  algorithms/min_push_to_b.c\
+			  algorithms/medium-algo.c \
+              algorithms/medium-algo2.c \
+              algorithms/stack_to_arr.c\
 			  parsing/ft_atol.c \
 			  parsing/is_number_string.c \
               parsing/the_same.c \
@@ -55,4 +58,8 @@ fclean: clean
 
 re: fclean all
 
+
 .PHONY: all clean fclean re
+
+test:
+	cc -I. main.c algorithms/*.c linkstack/*.c moves/*.c parsing/*.c stack_helper/*.c utils/*.c -o test_debug

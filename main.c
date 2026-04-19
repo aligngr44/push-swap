@@ -1,63 +1,52 @@
-// int main(int ac, char **av)
-// {
-//     char **ptr;
-//     int i;
-//     int arg_idx;
-
-//     if (ac < 2) // Eğer hiç argüman yoksa program bir şey yazmadan kapanmalı [cite: 270]
-//         return (0);
-
-//     arg_idx = 1; // 0 program adıdır, 1'den başlıyoruz
-//     while (arg_idx < ac)
-//     {
-//         ptr = ft_split(av[arg_idx], '.'); // Her bir argümanı boşluğa göre böl
-//         i = 0;
-//         while (ptr && ptr[i])
-//         {
-//             printf("%s\n", ptr[i]); // Sayıları gör
-//             // Burada sayıları stack yapına (struct) ekleme mantığını kurmalısın
-//             free(ptr[i]); // İşin bitince temizle [cite: 35]
-//             i++;
-//         }
-//         free(ptr);
-//         arg_idx++;
-//     }
-//     return (0);
-// }
+#include <stdio.h>
+#include <stdlib.h>
 #include "push_swap.h"
 
-static void	sort_small(t_stack **a, t_stack **b)
+void	print_stack(t_stack *stack, char name)
 {
-	int	size;
-
-	size = stack_size(*a);
-	if (size == 2)
-		sort_two(a);
-	else if (size == 3)
-		sort_three(a);
-	else if (size == 4)
-		sort_four(a, b);
-	else if (size == 5)
-		sort_five(a, b);
+	printf("Stack %c: ", name);
+	while (stack)
+	{
+		printf("%d", stack->value);
+		if (stack->next)
+			printf(" ");
+		stack = stack->next;
+	}
+	printf("\n");
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		i;
 
 	a = NULL;
 	b = NULL;
-	if (ac < 2)
-		return (0);
-	if (!parse_input(&a, ac, av))
+	i = 1;
+	while (i < ac)
 	{
-		stack_clear(&a);
-		ft_error();
-		return (1);
+		stack_add_back(&a, stack_new(atoi(av[i])));
+		i++;
 	}
-	if (!is_sorted(a))
-		sort_small(&a, &b);
+	indexing(a);
+
+	printf("Before:\n");
+	print_stack(a, 'A');
+	print_stack(b, 'B');
+
+	/* BURAYI KENDİ MEDIUM FONKSİYON ADINLA DEĞİŞTİR */
+	chunk_sort(&a, &b);
+
+	printf("\nAfter:\n");
+	print_stack(a, 'A');
+	print_stack(b, 'B');
+
+	if (is_sorted(a) && b == NULL)
+		printf("\nRESULT: OK\n");
+	else
+		printf("\nRESULT: KO\n");
+
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);
