@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	sb(t_stack **b)
+void	m_sb(t_stack **b)
 {
 	t_stack	*one;
 	t_stack	*two;
@@ -17,10 +17,10 @@ void	sb(t_stack **b)
 	one->prev = two;
 	*b = two; // stack başını güncelle
 
-	write(1, "sb\n", 3);
+
 }
 
-void	rb(t_stack **b)
+void	m_rb(t_stack **b)
 {
 	t_stack	*one;
 	t_stack	*lst;
@@ -35,10 +35,10 @@ void	rb(t_stack **b)
 	lst->next = one;      // eski head'i sona koy
 	one->prev = lst;
 
-	write(1, "rb\n", 3);
+	
 }
 
-void	rrb(t_stack **b)
+void	m_rrb(t_stack **b)
 {
 	t_stack	*last;
 	t_stack	*new_last;
@@ -54,5 +54,4 @@ void	rrb(t_stack **b)
 	*b = last;
 
 
-	write(1, "rrb\n", 4);
 }

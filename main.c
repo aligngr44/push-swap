@@ -15,38 +15,79 @@ void	print_stack(t_stack *stack, char name)
 	printf("\n");
 }
 
+// int	main(int ac, char **av)
+// {
+// 	t_stack	*a;
+// 	t_stack	*b;
+// 	int		i;
+
+// 	a = NULL;
+// 	b = NULL;
+// 	i = 1;
+// 	while (i < ac)
+// 	{
+// 		stack_add_back(&a, stack_new(atoi(av[i])));
+// 		i++;
+// 	}
+// 	indexing(a);
+
+// 	printf("Before:\n");
+// 	print_stack(a, 'A');
+// 	print_stack(b, 'B');
+
+// 	/* BURAYI KENDİ MEDIUM FONKSİYON ADINLA DEĞİŞTİR */
+// 	chunk_sort(&a, &b);
+
+// 	printf("\nAfter:\n");
+// 	print_stack(a, 'A');
+// 	print_stack(b, 'B');
+
+// 	if (is_sorted(a) && b == NULL)
+// 		printf("\nRESULT: OK\n");
+// 	else
+// 		printf("\nRESULT: KO\n");
+
+// 	stack_clear(&a);
+// 	stack_clear(&b);
+// 	return (0);
+// }
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		i;
+	int		size;
 
 	a = NULL;
 	b = NULL;
-	i = 1;
-	while (i < ac)
+	if (ac < 2)
+		return (0);
+	if (!parse_input(&a, ac, av))
 	{
-		stack_add_back(&a, stack_new(atoi(av[i])));
-		i++;
+		ft_error();
+		stack_clear(&a);
+		return (1);
 	}
-	indexing(a);
-
-	printf("Before:\n");
 	print_stack(a, 'A');
 	print_stack(b, 'B');
-
-	/* BURAYI KENDİ MEDIUM FONKSİYON ADINLA DEĞİŞTİR */
-	chunk_sort(&a, &b);
-
-	printf("\nAfter:\n");
-	print_stack(a, 'A');
-	print_stack(b, 'B');
-
-	if (is_sorted(a) && b == NULL)
-		printf("\nRESULT: OK\n");
+	if (is_sorted(a))
+	{
+		stack_clear(&a);
+		return (0);
+	}
+	size = stack_size(a);
+	if (size == 2)
+		sort_two(&a);
+	else if (size == 3)
+		sort_three(&a);
+	else if (size == 4)
+		sort_four(&a, &b);
+	else if (size == 5)
+		sort_five(&a, &b);
 	else
-		printf("\nRESULT: KO\n");
-
+		simple_sort(&a, &b);
+	print_stack(a, 'A');
+	print_stack(b, 'B');
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

@@ -31,7 +31,11 @@ SRC			= main.c \
               parsing/the_same.c \
 			  parsing/add_number_to_stack.c\
 			  parsing/parse_arg.c\
-			  parsing/parse_input.c
+			  parsing/parse_input.c\
+			  setting/m_push.c \
+			  setting/m_stack_a.c \
+			  setting/m_stack_b.c \
+			  setting/m_stack_common.c 
 
 
 

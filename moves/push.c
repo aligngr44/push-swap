@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	pa(t_stack **a, t_stack **b)
+void	m_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -16,9 +16,9 @@ void	pa(t_stack **a, t_stack **b)
 	tmp->prev = NULL;
 	*a = tmp;
 
-	write(1, "pa\n", 3);
+
 }
-void	pb(t_stack **a, t_stack **b)
+void	m_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -34,7 +34,5 @@ void	pb(t_stack **a, t_stack **b)
 	tmp->prev = NULL;
 	*b = tmp;
 
-
-	write(1, "pb\n", 3);
 
 }

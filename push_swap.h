@@ -38,6 +38,19 @@ void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
+void	m_ss(t_stack **a, t_stack **b);
+void	m_rr(t_stack **a, t_stack **b);
+void	m_rrr(t_stack **a, t_stack **b);
+void	m_sb(t_stack **b);
+void	m_rb(t_stack **b);
+void	m_rrb(t_stack **b);
+void	m_sa(t_stack **a);
+void	m_ra(t_stack **a);
+void	m_rra(t_stack **a);
+void	m_pb(t_stack **a, t_stack **b);
+void	m_pa(t_stack **a, t_stack **b);
+
+
 /*
 ** HELPERS
 */
@@ -55,6 +68,7 @@ void sort_two(t_stack **a);
 void	sort_three(t_stack **a);
 void sort_four(t_stack **a, t_stack **b);
 void sort_five(t_stack **a, t_stack **b);
+void	simple_sort(t_stack **a, t_stack **b);      //!!!!!!!!
 
 void	indexing(t_stack *stack);
 t_stack	*find_unindexed_min(t_stack *stack);
@@ -87,5 +101,6 @@ int		the_same(t_stack *a, int value);
 int		add_number_to_stack(t_stack **a, char *token);
 int		parse_arg(t_stack **a, char *arg);
 int		parse_input(t_stack **a, int ac, char **av);
+
 
 #endif

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	sa(t_stack **a)
+void	m_sa(t_stack **a)
 {
 	t_stack	*one;
 	t_stack	*two;
@@ -19,10 +19,10 @@ void	sa(t_stack **a)
 	*a = two; // stack başını güncelle
 
 
-	write(1, "sa\n", 3);
+	
 }
 
-void	ra(t_stack **a)
+void	m_ra(t_stack **a)
 {
 	t_stack	*one;
 	t_stack	*lst;
@@ -39,10 +39,10 @@ void	ra(t_stack **a)
 
 
 
-	write(1, "ra\n", 3);
+	
 }
 
-void	rra(t_stack **a)
+void	m_rra(t_stack **a)
 {
 	t_stack	*last;
 	t_stack	*new_last;
@@ -58,5 +58,5 @@ void	rra(t_stack **a)
 	*a = last;
 
 
-	write(1, "rra\n", 4);
+	
 }

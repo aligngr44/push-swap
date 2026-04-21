@@ -44,5 +44,16 @@ void sort_five(t_stack **a, t_stack **b)
 	min_push_to_b(a, b);
 	sort_four(a,b);
 	pa(a,b);
+}
 
+void	simple_sort(t_stack **a, t_stack **b)
+{
+
+	while (stack_size(*a) > 3)
+	{
+		min_push_to_b(a, b); // sen yazacaksın (ra / rra seçimi)
+	}
+	sort_three(a);
+	while (*b)
+		pa(a, b);
 }

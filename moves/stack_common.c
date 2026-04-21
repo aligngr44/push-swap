@@ -1,22 +1,20 @@
 #include "push_swap.h"
 
-void	ss(t_stack **a, t_stack **b)
+void	m_ss(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
-	write(1, "ss\n", 3);
+	m_sa(a);
+	m_sb(b);
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	m_rr(t_stack **a, t_stack **b)
 {
-	ra(a);
-	rb(b);
-	write(1, "rr\n", 3);
+	m_ra(a);
+	m_rb(b);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	m_rrr(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
-	write(1, "rrr\n", 4);
+	m_rra(a);
+	m_rrb(b);
+
 }
