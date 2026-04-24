@@ -28,7 +28,8 @@ SRC			= main.c \
 			  algorithms/min_push_to_b.c\
 			  algorithms/medium-algo.c \
               algorithms/medium-algo2.c \
-              algorithms/stack_to_arr.c\
+              algorithms/radix_utils.c\
+			  algorithms/radix_algo.c\
 			  parsing/is_number_string.c \
               parsing/the_same.c \
 			  parsing/add_number_to_stack.c\
