@@ -24,12 +24,11 @@ SRC			= main.c \
 			  stack_helper/stack_max.c\
 			  stack_helper/stack_min.c\
 			  algorithms/simple_algo.c \
-			  algorithms/simple_utils.c \
 			  algorithms/min_push_to_b.c\
 			  algorithms/medium-algo.c \
               algorithms/medium-algo2.c \
-              algorithms/radix_utils.c\
 			  algorithms/radix_algo.c\
+			  algorithms/adaptive.c\
 			  parsing/is_number_string.c \
               parsing/the_same.c \
 			  parsing/add_number_to_stack.c\
