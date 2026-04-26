@@ -13,6 +13,8 @@ int	parse_input(t_stack **a, int *mode, int ac, char **av)
 		else if (!ft_strcmp(av[i], "--medium"))
 			*mode = 2;
 		else if (!ft_strcmp(av[i], "--adaptive"))
+			*mode = 4;
+		else if (!ft_strcmp(av[i], "--complex"))
 			*mode = 3;
 		else if (!parse_arg(a, av[i]))
 			return (0);
