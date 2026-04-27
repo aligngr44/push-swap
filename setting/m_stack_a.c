@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:46:49 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:46:53 by algungor         ###   ########.fr       */
+/*   Updated: 2026/04/27 17:47:03 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 void	sa(t_stack **a)
 {
+	if (a)
+		bench_count(*a, op_sa);
 	m_sa(a);
 	write(1, "sa\n", 3);
 }
+
 void	ra(t_stack **a)
 {
+	if (a)
+		bench_count(*a, op_ra);
 	m_ra(a);
 	write(1, "ra\n", 3);
 }
+
 void	rra(t_stack **a)
 {
+	if (a)
+		bench_count(*a, op_rra);
 	m_rra(a);
 	write(1, "rra\n", 4);
 }

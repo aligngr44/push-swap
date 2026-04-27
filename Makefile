@@ -4,6 +4,8 @@ CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 
 SRC			= main.c \
+			  bench.c \
+			  bench_utils.c \
 			  linkstack/stack_add_back.c \
 			  linkstack/stack_add_front.c \
 			  linkstack/stack_clear.c \
@@ -68,4 +70,4 @@ re: fclean all
 .PHONY: all clean fclean re
 
 test:
-	cc -I. main.c algorithms/*.c linkstack/*.c moves/*.c parsing/*.c stack_helper/*.c utils/*.c -o test_debug
+	cc -I. main.c bench.c bench_utils.c algorithms/*.c linkstack/*.c moves/*.c parsing/*.c stack_helper/*.c utils/*.c setting/*.c -o test_debug

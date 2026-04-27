@@ -34,6 +34,8 @@ double	disorder(t_stack *a)
 		}
 		i = i->next;
 	}
+	if (total == 0)
+		return (0);
 	return ((double)mistake / total);
 }
 void	adaptive_sort(t_stack **a, t_stack **b)

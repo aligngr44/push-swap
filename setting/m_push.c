@@ -14,11 +14,16 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
+	if (b)
+		bench_count(*b, op_pa);
 	m_pa(a, b);
 	write(1, "pa\n", 3);
 }
+
 void	pb(t_stack **a, t_stack **b)
 {
+	if (a)
+		bench_count(*a, op_pb);
 	m_pb(a, b);
 	write(1, "pb\n", 3);
 }

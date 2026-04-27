@@ -23,5 +23,6 @@ t_stack	*stack_new(int value)
 	new_node->index = -1;
 	new_node->next = NULL;
 	new_node->prev = NULL;
+	new_node->bench = NULL;
 	return (new_node);
 }

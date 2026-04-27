@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:48:41 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 15:17:10 by algungor         ###   ########.fr       */
+/*   Updated: 2026/04/27 20:17:52 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,41 +17,44 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// typedef enum e_op {
-// 	SIMPLE,
-// 	MEDIUM,
-// 	COMPLEX
-// } t_op;
-
 typedef struct s_bench
 {
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int	total;
-	int	active;
+	int		active;
+	int		total;
+	int		mode;
+	int		op[11];
+	double	disorder;
 }	t_bench;
 
-void	bench_init(t_bench *bench, int active);
-void	bench_count(t_bench *bench, char *op);
-void	bench_print(t_bench *bench, double disorder,
-			char *strategy, char *complexity);
+typedef enum e_bench_op
+{
+	op_sa,
+	op_sb,
+	op_ss,
+	op_pa,
+	op_pb,
+	op_ra,
+	op_rb,
+	op_rr,
+	op_rra,
+	op_rrb,
+	op_rrr
+}	t_bench_op;
+
+typedef struct s_option
+{
+	int	mode;
+	int	bench;
+}	t_option;
 
 typedef struct s_stack
 {
-	int value;            // Sayının kendisi
-	int index;            // Sıralamadki konum
-	struct s_stack *next; // Sonraki node
-	struct s_stack *prev; // Önceki node
-}		t_stack;
+	int				value;
+	int				index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+	t_bench			*bench;
+}	t_stack;
 
 /*
 ** LINKSTACK
@@ -146,6 +149,19 @@ int		is_number_string(char *s);
 int		the_same(t_stack *a, int value);
 int		add_number_to_stack(t_stack **a, char *token);
 int		parse_arg(t_stack **a, char *arg);
-int		parse_input(t_stack **a, int *mode, int ac, char **av);
+int		parse_input(t_stack **a, t_option *option, int ac, char **av);
+
+/*
+** BENCHMARK
+*/
+void	bench_init(t_bench *bench, int mode, double disorder);
+void	bench_attach(t_stack *stack, t_bench *bench);
+void	bench_count(t_stack *stack, t_bench_op op);
+void	bench_print(t_bench *bench);
+void	bench_putstr(char *s);
+void	bench_putnbr(int n);
+void	bench_put_percent(double disorder);
+void	bench_put_count(char *name, int count);
+void	bench_put_strategy(t_bench *bench);
 
 #endif

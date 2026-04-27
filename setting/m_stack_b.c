@@ -14,16 +14,24 @@
 
 void	sb(t_stack **b)
 {
+	if (b)
+		bench_count(*b, op_sb);
 	m_sb(b);
 	write(1, "sb\n", 3);
 }
+
 void	rb(t_stack **b)
 {
+	if (b)
+		bench_count(*b, op_rb);
 	m_rb(b);
 	write(1, "rb\n", 3);
 }
+
 void	rrb(t_stack **b)
 {
+	if (b)
+		bench_count(*b, op_rrb);
 	m_rrb(b);
 	write(1, "rrb\n", 4);
 }
