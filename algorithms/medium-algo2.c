@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   medium-algo2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:43:24 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 15:06:12 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	stack_max_index(t_stack *stack)//Bu fonksiyon B içindeki en büyük index’i bulacak.
+int	stack_max_index(t_stack *stack)
+// Bu fonksiyon B içindeki en büyük index’i bulacak.
 {
-	int	max;
+	int max;
 
 	if (!stack)
 		return (-1);
@@ -16,9 +29,10 @@ int	stack_max_index(t_stack *stack)//Bu fonksiyon B içindeki en büyük index�
 	return (max);
 }
 
-int	find_position_by_index(t_stack *stack, int index)//Bu da o index’in B içinde kaçıncı sırada olduğunu bulacak
+int	find_position_by_index(t_stack *stack, int index)
+// Bu da o index’in B içinde kaçıncı sırada olduğunu bulacak
 {
-	int	pos;
+	int pos;
 
 	pos = 0;
 	while (stack)
@@ -31,10 +45,10 @@ int	find_position_by_index(t_stack *stack, int index)//Bu da o index’in B içi
 	return (-1);
 }
 
-void	rotate_b_to_top(t_stack **b, int target_index)//hedef index’i, en az hareketle B’nin tepesine getirmek
+void	rotate_b_to_top(t_stack **b, int target_index)
 {
-	int	pos;
-	int	size;
+	int pos;
+	int size;
 
 	pos = find_position_by_index(*b, target_index);
 	size = stack_size(*b);
@@ -50,9 +64,10 @@ void	rotate_b_to_top(t_stack **b, int target_index)//hedef index’i, en az hare
 	}
 }
 
-void	push_back_to_a(t_stack **a, t_stack **b)//Bu da ana toplama fonksiyonu.
+void	push_back_to_a(t_stack **a, t_stack **b)
+
 {
-	int	max;
+	int max;
 
 	while (*b)
 	{

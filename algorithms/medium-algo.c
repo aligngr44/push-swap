@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   medium-algo.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:43:06 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 13:43:22 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack	*find_unindexed_min(t_stack *stack)
@@ -9,10 +21,10 @@ t_stack	*find_unindexed_min(t_stack *stack)
 	{
 		if (stack->index == -1)
 		{
-			if (min == NULL )
+			if (min == NULL)
 				min = stack;
-            else if (stack->value < min->value)
-                min = stack;                                                                                           
+			else if (stack->value < min->value)
+				min = stack;
 		}
 		stack = stack->next;
 	}

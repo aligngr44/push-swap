@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:48:41 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 15:17:10 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -5,13 +17,41 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+// typedef enum e_op {
+// 	SIMPLE,
+// 	MEDIUM,
+// 	COMPLEX
+// } t_op;
+
+typedef struct s_bench
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	total;
+	int	active;
+}	t_bench;
+
+void	bench_init(t_bench *bench, int active);
+void	bench_count(t_bench *bench, char *op);
+void	bench_print(t_bench *bench, double disorder,
+			char *strategy, char *complexity);
+
 typedef struct s_stack
 {
-	int				value; // Sayının kendisi
-	int				index; // Sıralamadki konum
-	struct s_stack	*next; // Sonraki node
-	struct s_stack	*prev; // Önceki node
-}	t_stack;
+	int value;            // Sayının kendisi
+	int index;            // Sıralamadki konum
+	struct s_stack *next; // Sonraki node
+	struct s_stack *prev; // Önceki node
+}		t_stack;
 
 /*
 ** LINKSTACK
@@ -50,25 +90,24 @@ void	m_rra(t_stack **a);
 void	m_pb(t_stack **a, t_stack **b);
 void	m_pa(t_stack **a, t_stack **b);
 
-
 /*
 ** HELPERS
 */
 int		is_sorted(t_stack *stack);
-int	stack_max(t_stack *stack);
-int	stack_min(t_stack *stack);
-int	find_position(t_stack *stack, int value);
+int		stack_max(t_stack *stack);
+int		stack_min(t_stack *stack);
+int		find_position(t_stack *stack, int value);
 /*
 
 
 **algorithms
 */
 void	min_push_to_b(t_stack **a, t_stack **b);
-void sort_two(t_stack **a);
+void	sort_two(t_stack **a);
 void	sort_three(t_stack **a);
-void sort_four(t_stack **a, t_stack **b);
-void sort_five(t_stack **a, t_stack **b);
-void	simple_sort(t_stack **a, t_stack **b);      //!!!!!!!!
+void	sort_four(t_stack **a, t_stack **b);
+void	sort_five(t_stack **a, t_stack **b);
+void	simple_sort(t_stack **a, t_stack **b); //!!!!!!!!
 
 void	indexing(t_stack *stack);
 t_stack	*find_unindexed_min(t_stack *stack);
@@ -84,11 +123,11 @@ void	push_back_to_a(t_stack **a, t_stack **b);
 
 void	chunk_sort(t_stack **a, t_stack **b);
 
-int	get_all_bits(int max_index);
-int	get_bit(int index, int bit);
+int		get_all_bits(int max_index);
+int		get_bit(int index, int bit);
 void	radix_sort(t_stack **a, t_stack **b);
 
-double disorder(t_stack *a);
+double	disorder(t_stack *a);
 void	adaptive_sort(t_stack **a, t_stack **b);
 
 /*
@@ -97,7 +136,7 @@ void	adaptive_sort(t_stack **a, t_stack **b);
 char	**ft_split(char const *s, char c);
 void	free_split(char **split);
 void	ft_error(void);
-int	ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 long	ft_atol(const char *str);
 
 /*
@@ -108,6 +147,5 @@ int		the_same(t_stack *a, int value);
 int		add_number_to_stack(t_stack **a, char *token);
 int		parse_arg(t_stack **a, char *arg);
 int		parse_input(t_stack **a, int *mode, int ac, char **av);
-
 
 #endif

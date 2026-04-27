@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple_algo.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:42:51 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 13:45:02 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-void sort_two(t_stack **a)
+
+void	sort_two(t_stack **a)
 {
-    if((*a)->value > (*a)->next->value)
-        sa(a);
+	if ((*a)->value > (*a)->next->value)
+		sa(a);
 }
 void	sort_three(t_stack **a)
 {
@@ -13,7 +26,6 @@ void	sort_three(t_stack **a)
 	first = (*a)->value;
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
-
 	if (first > second && second < third && first < third) // 2 1 3
 		sa(a);
 	else if (first > second && second > third) // 3 2 1

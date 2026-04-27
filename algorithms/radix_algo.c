@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_algo.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:42:55 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 13:44:39 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	get_bit(int index, int bit)
@@ -17,26 +29,25 @@ int	get_all_bits(int max_index)
 
 void	radix_sort(t_stack **a, t_stack **b)
 {
-    int i;
-    int max_index;
-    int size;
+	int	i;
+	int	max_index;
+	int	size;
 
-    indexing(*a);
-    max_index = get_all_bits(stack_size(*a) - 1);
-
-    i = 0;
-    while(i < max_index)
-    {
-        size = stack_size(*a);
-        while(size--)
-        {
-            if(get_bit((*a)->index, i))
-                ra(a);
-            else
-                pb(a, b);
-        }
-        while(*b)
-            pa(a, b);
-        i++;
-    }
+	indexing(*a);
+	max_index = get_all_bits(stack_size(*a) - 1);
+	i = 0;
+	while (i < max_index)
+	{
+		size = stack_size(*a);
+		while (size--)
+		{
+			if (get_bit((*a)->index, i))
+				ra(a);
+			else
+				pb(a, b);
+		}
+		while (*b)
+			pa(a, b);
+		i++;
+	}
 }

@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:48:30 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 13:48:36 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
 // #include <stdio.h>
 // void	print_stack(t_stack *stack, char name)
 // {
@@ -35,8 +48,7 @@ int	main(int ac, char **av)
 	}
 	// print_stack(a, 'A');
 	// print_stack(b, 'B');
-
-	//indexing(a); /////// !!!!!!!!!!! incelenecek !!!!!!!!!
+	// indexing(a); /////// !!!!!!!!!!! incelenecek !!!!!!!!!
 	if (mode == 1)
 		simple_sort(&a, &b);
 	else if (mode == 2)
@@ -47,11 +59,9 @@ int	main(int ac, char **av)
 		adaptive_sort(&a, &b);
 	else
 		adaptive_sort(&a, &b);
-
 	// print_stack(a, 'A');
 	// print_stack(b, 'B');
 	stack_clear(&a);
 	stack_clear(&b);
-
 	return (0);
 }

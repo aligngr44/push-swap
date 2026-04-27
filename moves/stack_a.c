@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_a.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/27 13:45:47 by algungor          #+#    #+#             */
+/*   Updated: 2026/04/27 13:46:00 by algungor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	m_sa(t_stack **a)
@@ -17,9 +29,6 @@ void	m_sa(t_stack **a)
 	two->prev = NULL; // yeni head olacak
 	one->prev = two;
 	*a = two; // stack başını güncelle
-
-
-	
 }
 
 void	m_ra(t_stack **a)
@@ -36,10 +45,6 @@ void	m_ra(t_stack **a)
 	lst = stack_last(*a); // listenin sonunu bul
 	lst->next = one;      // eski head'i sona koy
 	one->prev = lst;
-
-
-
-	
 }
 
 void	m_rra(t_stack **a)
@@ -56,7 +61,4 @@ void	m_rra(t_stack **a)
 	(*a)->prev = last;
 	last->prev = NULL; // last yeni head olacak
 	*a = last;
-
-
-	
 }
