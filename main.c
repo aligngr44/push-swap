@@ -48,14 +48,14 @@ int	main(int ac, char **av)
 		return (main_error(&a));
 	if (!a)
 		return (0);
-	if (option.bench)
+	if (option.bench != 0)
 	{
 		bench_init(&bench, option.mode, disorder(a));
 		bench_attach(a, &bench);
 	}
 	if (!is_sorted(a))
 		run_sort(&a, &b, option.mode);
-	if (option.bench)
+	if (option.bench != 0)
 		bench_print(&bench);
 	stack_clear(&a);
 	stack_clear(&b);
