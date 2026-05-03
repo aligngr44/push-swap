@@ -36,13 +36,11 @@ void	bench_attach(t_stack *stack, t_bench *bench)
 
 void	bench_count(t_stack *stack, t_bench_op op)
 {
-	t_bench	*bench;
 
 	if (!stack || !stack->bench || !stack->bench->active)
 		return ;
-	bench = stack->bench;
-	bench->total++;
-	bench->op[op]++;
+	stack->bench->total++;
+	stack->bench->op[op]++;
 }
 
 void	bench_print(t_bench *bench)
