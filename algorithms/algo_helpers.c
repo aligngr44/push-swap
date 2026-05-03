@@ -39,6 +39,18 @@ void	sort_small(t_stack **a, t_stack **b)
 	int	size;
 
 	size = stack_size(*a);
+	if (size <= 1 || is_sorted(*a))
+		return ;
+	if (size == 2)
+	{
+		sort_two(a);
+		return ;
+	}
+	if (size == 3)
+	{
+		sort_three(a);
+		return ;
+	}
 	while (size > 3)
 	{
 		min_push_to_b(a, b);

@@ -18,8 +18,13 @@ int	parse_arg(t_stack **a, char *arg)
 	int		i;
 
 	split = ft_split(arg, ' ');
-	if (!split || !split[0])
+	if (!split)
 		return (0);
+	if (!split[0])
+	{
+		free_split(split);
+		return (0);
+	}
 	i = 0;
 	while (split[i])
 	{

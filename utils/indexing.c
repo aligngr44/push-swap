@@ -33,8 +33,8 @@ t_stack	*find_unindexed_min(t_stack *stack)
 
 void	indexing(t_stack *stack)
 {
-	t_stack *min;
-	int i;
+	t_stack	*min;
+	int		i;
 
 	i = 0;
 	min = find_unindexed_min(stack);

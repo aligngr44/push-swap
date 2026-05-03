@@ -27,29 +27,38 @@ int	get_all_bits(int max_index)
 	return (bit);
 }
 
+void	radix_pass(t_stack **a, t_stack **b, int bit)
+{
+	int	size;
+
+	size = stack_size(*a);
+	while (size--)
+	{
+		if (get_bit((*a)->index, bit))
+			ra(a);
+		else
+			pb(a, b);
+	}
+	while (*b)
+		pa(a, b);
+}
+
 void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	i;
 	int	max_index;
-	int	size;
 
 	if (stack_size(*a) <= 5)
+	{
 		sort_small(a, b);
+		return ;
+	}
 	indexing(*a);
 	max_index = get_all_bits(stack_size(*a) - 1);
 	i = 0;
 	while (i < max_index)
 	{
-		size = stack_size(*a);
-		while (size--)
-		{
-			if (get_bit((*a)->index, i))
-				ra(a);
-			else
-				pb(a, b);
-		}
-		while (*b)
-			pa(a, b);
+		radix_pass(a, b, i);
 		i++;
 	}
 }

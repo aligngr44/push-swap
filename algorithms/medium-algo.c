@@ -59,10 +59,10 @@ void	process_chunk(t_stack **a, t_stack **b, int start, int end)
 
 void	push_chunks_to_b(t_stack **a, t_stack **b)
 {
-	int size;
-	int chunk;
-	int start;
-	int end;
+	int	size;
+	int	chunk;
+	int	start;
+	int	end;
 
 	size = stack_size(*a);
 	chunk = chunk_size(size);
