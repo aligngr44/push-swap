@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:45:17 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:45:21 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:30:11 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	stack_clear(t_stack **stack)
 		return ;
 	while (*stack)
 	{
-		tmp = (*stack)->next; // Bir sonrakini güvenli yere al
-		free(*stack);         // Mevcut olanı temizle
-		*stack = tmp;         // Bir sonrakine geç
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	*stack = NULL; // İşi garantiye alalım
+	*stack = NULL;
 }

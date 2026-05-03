@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:45:04 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:45:08 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:27:55 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	stack_add_back(t_stack **stack, t_stack *new_node)
 
 	if (!stack || !new_node)
 		return ;
-	if (!*stack) // Liste boşsa, yeni gelen artık listenin başıdır
+	if (!*stack)
 	{
 		*stack = new_node;
 		return ;
 	}
 	last = stack_last(*stack);
-	last->next = new_node; // Eskinin önü -> Yeni
-	new_node->prev = last; // Yeninin arkası -> Eski [İşte prev burada!]
+	last->next = new_node;
+	new_node->prev = last;
 }

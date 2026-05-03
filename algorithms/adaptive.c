@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:42:57 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:43:04 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:33:44 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,11 @@ double	disorder(t_stack *a)
 		return (0);
 	return ((double)mistake / total);
 }
+
 void	adaptive_sort(t_stack **a, t_stack **b)
 {
 	double	d;
-	int		size;
 
-	size = stack_size(*a);
-	if (size <= 5)
-	{
-		simple_sort(a, b);
-		return ;
-	}
 	d = disorder(*a);
 	if (d < 0.2)
 		simple_sort(a, b);

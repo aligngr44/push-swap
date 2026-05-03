@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:48:41 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 20:17:52 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:44:34 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ void	radix_sort(t_stack **a, t_stack **b);
 
 double	disorder(t_stack *a);
 void	adaptive_sort(t_stack **a, t_stack **b);
+void	sort_small(t_stack **a, t_stack **b);
 
 /*
 **UTILS

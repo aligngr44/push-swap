@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:42:55 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:44:39 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:45:28 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	radix_sort(t_stack **a, t_stack **b)
 	int	max_index;
 	int	size;
 
+	if (stack_size(*a) <= 5)
+		sort_small(a, b);
 	indexing(*a);
 	max_index = get_all_bits(stack_size(*a) - 1);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:45:10 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:45:14 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:28:02 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	stack_add_front(t_stack **stack, t_stack *new_node)
 {
 	if (!stack || !new_node)
 		return ;
-	if (!*stack) // Liste boşsa
+	if (!*stack)
 	{
 		*stack = new_node;
-		new_node->next = NULL; // Sonraki yok
-		new_node->prev = NULL; // Önceki de yok
+		new_node->next = NULL;
+		new_node->prev = NULL;
 		return ;
 	}
-	new_node->next = *stack;   // Yeni düğümün önü eski başa bağlanır
-	(*stack)->prev = new_node; // Eski başın arkası yeniye bağlanır
-	*stack = new_node;         // Yığının başı artık yeni düğümdür
-	new_node->prev = NULL;     // En başta olduğu için arkası NULL olmalı
+	new_node->next = *stack;
+	(*stack)->prev = new_node;
+	*stack = new_node;
+	new_node->prev = NULL;
 }

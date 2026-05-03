@@ -26,7 +26,7 @@ SRC			= main.c \
 			  stack_helper/stack_max.c\
 			  stack_helper/stack_min.c\
 			  algorithms/simple_algo.c \
-			  algorithms/min_push_to_b.c\
+			  algorithms/algo_helpers.c\
 			  algorithms/medium-algo.c \
               algorithms/medium-algo2.c \
 			  algorithms/radix_algo.c\

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_push_to_b.c                                    :+:      :+:    :+:   */
+/*   algo_helpers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:44:26 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:44:29 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:42:40 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,19 @@ void	min_push_to_b(t_stack **a, t_stack **b)
 			rra(a);
 	}
 	pb(a, b);
+}
+
+void	sort_small(t_stack **a, t_stack **b)
+{
+	int	size;
+
+	size = stack_size(*a);
+	while (size > 3)
+	{
+		min_push_to_b(a, b);
+		size--;
+	}
+	sort_three(a);
+	while (*b)
+		pa(a, b);
 }

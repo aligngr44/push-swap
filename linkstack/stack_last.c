@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:45:23 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:45:27 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:24:11 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*stack_last(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
-	while (stack->next) // Sonrakinin boş olduğu yere kadar git
+	while (stack->next)
 		stack = stack->next;
 	return (stack);
 }

@@ -1,0 +1,14 @@
+[bench] disorder: 49.95%
+[bench] strategy: adaptive, complexity: O(n sqrt(n))
+[bench] total: 6493
+[bench] sa: 0
+[bench] sb: 0
+[bench] ss: 0
+[bench] pa: 500
+[bench] pb: 500
+[bench] ra: 3821
+[bench] rb: 848
+[bench] rr: 0
+[bench] rra: 0
+[bench] rrb: 824
+[bench] rrr: 0

@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:46:04 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:46:06 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/03 14:21:11 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	m_sb(t_stack **b)
 	t_stack	*one;
 	t_stack	*two;
 
-	if (!b || !*b || !(*b)->next) // stack boşsa veya tek elemanlıysa işlem yok
+	if (!b || !*b || !(*b)->next)
 		return ;
 	one = *b;
 	two = one->next;
 	one->next = two->next;
-	if (two->next) // üçüncü eleman varsa prev bağlantısını düzelt
+	if (two->next)
 		two->next->prev = one;
 	two->next = one;
-	two->prev = NULL; // yeni head
+	two->prev = NULL;
 	one->prev = two;
-	*b = two; // stack başını güncelle
+	*b = two;
 }
 
 void	m_rb(t_stack **b)
@@ -35,14 +35,14 @@ void	m_rb(t_stack **b)
 	t_stack	*one;
 	t_stack	*lst;
 
-	if (!b || !*b || !(*b)->next) // rotate için en az 2 eleman gerekir
+	if (!b || !*b || !(*b)->next)
 		return ;
-	one = *b;       // eski head
-	*b = one->next; // yeni head
+	one = *b;
+	*b = one->next;
 	(*b)->prev = NULL;
 	one->next = NULL;
-	lst = stack_last(*b); // son elemanı bul
-	lst->next = one;      // eski head'i sona koy
+	lst = stack_last(*b);
+	lst->next = one;
 	one->prev = lst;
 }
 
@@ -51,13 +51,13 @@ void	m_rrb(t_stack **b)
 	t_stack	*last;
 	t_stack	*new_last;
 
-	if (!b || !*b || !(*b)->next) // reverse rotate için kontrol
+	if (!b || !*b || !(*b)->next)
 		return ;
-	last = stack_last(*b); // son eleman
-	new_last = last->prev; // yeni son eleman
+	last = stack_last(*b);
+	new_last = last->prev;
 	new_last->next = NULL;
-	last->next = *b; // eski head'i last'in arkasına bağla
+	last->next = *b;
 	(*b)->prev = last;
-	last->prev = NULL; // last yeni head olacak
+	last->prev = NULL;
 	*b = last;
 }
