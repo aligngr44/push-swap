@@ -21,6 +21,7 @@ SRC			= main.c \
 			  utils/free_split.c \
 			  utils/ft_atol.c \
 			  utils/ft_strcmp.c\
+			  utils/indexing.c \
 			  stack_helper/is_sorted.c\
 			  stack_helper/find_position.c\
 			  stack_helper/stack_max.c\
