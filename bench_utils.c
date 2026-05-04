@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 19:44:29 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 19:44:32 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/04 15:16:00 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,15 @@ void	bench_put_count(char *name, int count)
 void	bench_put_strategy(t_bench *bench)
 {
 	if (bench->mode == 1)
-		bench_putstr("simple, complexity: O(n^2)\n");
+		bench_putstr("simple / O(n^2)\n");
 	else if (bench->mode == 2)
-		bench_putstr("medium, complexity: O(n sqrt(n))\n");
+		bench_putstr("medium / O(n sqrt(n))\n");
 	else if (bench->mode == 3)
-		bench_putstr("complex, complexity: O(n log n)\n");
+		bench_putstr("complex / O(n log n)\n");
 	else if (bench->disorder < 0.2)
-		bench_putstr("adaptive, complexity: O(n^2)\n");
+		bench_putstr("adaptive / O(n^2)\n");
 	else if (bench->disorder < 0.5)
-		bench_putstr("adaptive, complexity: O(n sqrt(n))\n");
+		bench_putstr("adaptive / O(n sqrt(n))\n");
 	else
-		bench_putstr("adaptive, complexity: O(n log n)\n");
+		bench_putstr("adaptive / O(n log n)\n");
 }
