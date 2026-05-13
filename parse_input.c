@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:46:32 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 15:11:18 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:23:37 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	parse_input(t_stack **a, t_option *option, int ac, char **av)
 			option->mode = 3;
 		else if (!ft_strcmp(av[i], "--bench"))
 			option->bench = 1;
+		else if(!ft_strcmp(av[i], "--count"))
+			option->bench = 2;
 		else if (!parse_arg(a, av[i]))
 			return (0);
 		i++;

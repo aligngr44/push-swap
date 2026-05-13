@@ -15,23 +15,29 @@
 void	sa(t_stack **a)
 {
 	if (a)
+	{
 		bench_count(*a, op_sa);
+		bench_write(*a, "sa\n", 3);
+	}
 	m_sa(a);
-	write(1, "sa\n", 3);
 }
 
 void	ra(t_stack **a)
 {
 	if (a)
+	{
 		bench_count(*a, op_ra);
+		bench_write(*a, "ra\n", 3);
+	}
 	m_ra(a);
-	write(1, "ra\n", 3);
 }
 
 void	rra(t_stack **a)
 {
 	if (a)
+	{
 		bench_count(*a, op_rra);
+		bench_write(*a, "rra\n", 4);
+	}
 	m_rra(a);
-	write(1, "rra\n", 4);
 }

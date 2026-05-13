@@ -18,7 +18,7 @@ void	bench_putstr(char *s)
 		write(2, s++, 1);
 }
 
-void	bench_putnbr(int n)
+void	bench_putnbr(int n, int fd)
 {
 	long	nb;
 	char	c;
@@ -26,13 +26,13 @@ void	bench_putnbr(int n)
 	nb = n;
 	if (nb < 0)
 	{
-		write(2, "-", 1);
+		write(fd, "-", 1);
 		nb = -nb;
 	}
 	if (nb >= 10)
-		bench_putnbr(nb / 10);
+		bench_putnbr(nb / 10, fd);
 	c = (nb % 10) + '0';
-	write(2, &c, 1);
+	write(fd, &c, 1);
 }
 
 void	bench_put_percent(double disorder)
@@ -42,11 +42,11 @@ void	bench_put_percent(double disorder)
 
 	scaled = (int)(disorder * 10000.0 + 0.5);
 	frac = scaled % 100;
-	bench_putnbr(scaled / 100);
+	bench_putnbr(scaled / 100, 2);
 	write(2, ".", 1);
 	if (frac < 10)
 		write(2, "0", 1);
-	bench_putnbr(frac);
+	bench_putnbr(frac, 2);
 	write(2, "%", 1);
 }
 
@@ -55,7 +55,7 @@ void	bench_put_count(char *name, int count)
 	bench_putstr("[bench] ");
 	bench_putstr(name);
 	bench_putstr(": ");
-	bench_putnbr(count);
+	bench_putnbr(count, 2);
 	bench_putstr("\n");
 }
 

@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:48:30 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:48:36 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:38:16 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,26 @@ static void	run_sort(t_stack **a, t_stack **b, int mode)
 		adaptive_sort(a, b);
 }
 
-static int	main_error(t_stack **a)
+static void	setup_bench(t_stack *a, t_bench *bench, t_option option)
 {
-	write(2, "Error\n", 6);
-	stack_clear(a);
-	return (1);
+	if (option.bench != 0)
+	{
+		bench_init(bench, option.mode, disorder(a));
+		bench->active = option.bench;
+		bench_attach(a, bench);
+	}
+} 
+
+static void	print_bench(t_bench *bench, t_option option)
+{
+	if (option.bench != 0)
+		bench_print(bench);
+}
+
+static void	execute_sort(t_stack **a, t_stack **b, t_option option)
+{
+	if (!is_sorted(*a))
+		run_sort(a, b, option.mode);
 }
 
 int	main(int ac, char **av)
@@ -48,15 +63,9 @@ int	main(int ac, char **av)
 		return (main_error(&a));
 	if (!a)
 		return (0);
-	if (option.bench != 0)
-	{
-		bench_init(&bench, option.mode, disorder(a));
-		bench_attach(a, &bench);
-	}
-	if (!is_sorted(a))
-		run_sort(&a, &b, option.mode);
-	if (option.bench != 0)
-		bench_print(&bench);
+	setup_bench(a, &bench, option);
+	execute_sort(&a, &b, option);
+	print_bench(&bench, option);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:44:26 by algungor          #+#    #+#             */
-/*   Updated: 2026/05/03 14:42:40 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:13:46 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,11 @@ void	sort_small(t_stack **a, t_stack **b)
 	sort_three(a);
 	while (*b)
 		pa(a, b);
+}
+
+int	main_error(t_stack **stack)
+{
+	write(2, "Error\n", 6);
+	stack_clear(stack);
+	return (1);
 }

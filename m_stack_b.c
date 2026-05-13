@@ -15,23 +15,29 @@
 void	sb(t_stack **b)
 {
 	if (b)
+	{
 		bench_count(*b, op_sb);
+		bench_write(*b, "sb\n", 3);
+	}
 	m_sb(b);
-	write(1, "sb\n", 3);
 }
 
 void	rb(t_stack **b)
 {
 	if (b)
+	{
 		bench_count(*b, op_rb);
+		bench_write(*b, "rb\n", 3);
+	}
 	m_rb(b);
-	write(1, "rb\n", 3);
 }
 
 void	rrb(t_stack **b)
 {
 	if (b)
+	{
 		bench_count(*b, op_rrb);
+		bench_write(*b, "rrb\n", 4);
+	}
 	m_rrb(b);
-	write(1, "rrb\n", 4);
 }

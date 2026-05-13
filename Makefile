@@ -7,7 +7,6 @@ SRC			= main.c \
 			  bench.c \
 			  bench_utils.c \
 			  stack_add_back.c \
-			  stack_add_front.c \
 			  stack_clear.c \
 			  stack_last.c \
 			  stack_new.c \
@@ -16,7 +15,6 @@ SRC			= main.c \
 			  stack_a.c \
 			  stack_b.c \
 			  stack_common.c \
-			  ft_error.c \
 			  ft_split.c \
 			  free_split.c \
 			  ft_atol.c \
@@ -24,12 +22,11 @@ SRC			= main.c \
 			  indexing.c \
 			  is_sorted.c \
 			  find_position.c \
-			  stack_max.c \
 			  stack_min.c \
 			  simple_algo.c \
 			  algo_helpers.c \
-			  medium-algo.c \
-			  medium-algo2.c \
+			  medium_algo.c \
+			  medium_algo2.c \
 			  radix_algo.c \
 			  adaptive.c \
 			  is_number_string.c \

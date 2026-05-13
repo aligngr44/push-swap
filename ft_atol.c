@@ -6,20 +6,20 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 13:47:55 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 13:47:57 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/05 04:05:04 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol_limit(int sign)
+static long	ft_atol_limit(int sign)
 {
 	if (sign == -1)
 		return (2147483648);
 	return (2147483647);
 }
 
-int	ft_atol_overflows(long result, long limit, int digit)
+static int	ft_atol_overflows(long result, long limit, int digit)
 {
 	if (result > limit / 10)
 		return (1);

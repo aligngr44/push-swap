@@ -6,7 +6,7 @@
 /*   By: algungor <algungor@student.42istanbul.com.t+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 19:44:29 by algungor          #+#    #+#             */
-/*   Updated: 2026/04/27 19:44:32 by algungor         ###   ########.fr       */
+/*   Updated: 2026/05/06 17:28:57 by algungor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	bench_count(t_stack *stack, t_bench_op op)
 	if (!stack || !stack->bench || !stack->bench->active)
 		return ;
 	stack->bench->total++;
+	if(stack->bench->active == 2)
+		return;
 	stack->bench->op[op]++;
 }
 
@@ -46,6 +48,11 @@ void	bench_print(t_bench *bench)
 {
 	if (!bench || !bench->active)
 		return ;
+	if (bench->active == 2)
+	{
+		bench_putnbr(bench->total, 1);
+		return ;		
+	}
 	bench_putstr("[bench] disorder: ");
 	bench_put_percent(bench->disorder);
 	bench_putstr("\n[bench] strategy: ");
@@ -62,4 +69,11 @@ void	bench_print(t_bench *bench)
 	bench_put_count("rra", bench->op[op_rra]);
 	bench_put_count("rrb", bench->op[op_rrb]);
 	bench_put_count("rrr", bench->op[op_rrr]);
+}
+
+void	bench_write(t_stack *stack, char *move, int len)
+{
+	if (stack && stack->bench && stack->bench->active == 2)
+		return ;
+	write(1, move, len);
 }
